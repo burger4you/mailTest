@@ -26,7 +26,7 @@ public class ComposePage extends PageObject {
     @FindBy(name = "Body")
     private WebElementFacade bodyField;
 
-    @FindBy(xpath = "//*[@Title='Отправить']")
+    @FindBy(xpath = "//*[@title='Отправить']")
     private WebElementFacade sendButton;
 
     public ComposePage(WebDriver driver) {
@@ -37,7 +37,6 @@ public class ComposePage extends PageObject {
     public void loading() {
         toField.shouldBeEnabled();
         subjectField.shouldBeEnabled();
-        sendButton.shouldBeEnabled();
     }
 
     /**

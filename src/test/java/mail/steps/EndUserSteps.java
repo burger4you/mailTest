@@ -61,7 +61,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     /**
-     * Устанавливает в настройках отображение следующего письма после удаление текущего
+     * Устанавливает в настройках отображение следующего письма после удаления текущего
      */
     @Step
     public void sets_in_settings_show_next_message_after_deleting_message() {
@@ -72,7 +72,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     /**
-     * Устанавливает в настройках отображение списка писем после удаление текущего письма
+     * Устанавливает в настройках отображение списка писем после удаления текущего письма
      */
     @Step
     public void sets_in_settings_show_list_of_subjects_after_deleting_message() {

@@ -38,7 +38,7 @@ public class SettingsAfterDeletingMessageStoryTest {
     @WithDriver("chrome")
     public void selecting_show_next_message_after_deleting_message() {
         endUser.logs_on_mail(LOGIN, PASSWORD);
-        endUser.sends_messages(TO, SUBJECT, BODY, 0);
+        endUser.sends_messages(TO, SUBJECT, BODY, 1);
         endUser.sets_in_settings_show_next_message_after_deleting_message();
         endUser.deletes_top_message();
         endUser.is_on_next_message_page();
@@ -51,7 +51,7 @@ public class SettingsAfterDeletingMessageStoryTest {
     @WithDriver("firefox")
     public void selecting_show_list_of_subjects_after_deleting_message() {
         endUser.logs_on_mail(LOGIN, PASSWORD);
-        endUser.sends_messages(TO, SUBJECT, BODY, 0);
+        endUser.sends_messages(TO, SUBJECT, BODY, 1);
         endUser.sets_in_settings_show_list_of_subjects_after_deleting_message();
         endUser.deletes_top_message();
         endUser.is_on_list_of_subjects_page();
