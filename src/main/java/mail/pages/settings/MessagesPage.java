@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Работа с письмами
  */
-@DefaultUrl("https://e.mail.ru/settings/messages")
+@DefaultUrl("https://e.mail.ru/stories/messages")
 public class MessagesPage extends PageObject {
 
     @FindBy(id = "MessagesPerPage")

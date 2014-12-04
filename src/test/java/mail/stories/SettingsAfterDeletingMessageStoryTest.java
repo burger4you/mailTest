@@ -1,4 +1,4 @@
-package settings;
+package mail.stories;
 
 import mail.requirements.Mail.Settings.Messages;
 import mail.steps.EndUserSteps;
@@ -48,7 +48,7 @@ public class SettingsAfterDeletingMessageStoryTest {
      * Настройка отображения списка тем писем после удаления текущего письма
      */
     @Test
-    @WithDriver("firefox")
+    @WithDriver("chrome")
     public void selecting_show_list_of_subjects_after_deleting_message() {
         endUser.logs_on_mail(LOGIN, PASSWORD);
         endUser.sends_messages(TO, SUBJECT, BODY, 1);

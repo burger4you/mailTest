@@ -8,6 +8,8 @@ import mail.pages.settings.MessagesPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -15,6 +17,8 @@ import static org.fest.assertions.Assertions.assertThat;
  * Библиотека шагов пользователя, зарегестрированного на mail.ru
  */
 public class EndUserSteps extends ScenarioSteps {
+
+    final static Logger logger = LoggerFactory.getLogger(EndUserSteps.class);
 
     LoginPage mainPage;
     InboxPage inboxPage;
@@ -38,6 +42,7 @@ public class EndUserSteps extends ScenarioSteps {
         mainPage.enter_password(password);
         mainPage.click_login_button();
         inboxPage.shouldBeDisplayed();
+        logger.info("Пользователь залогинился на сайт");
     }
 
     /**
@@ -57,6 +62,7 @@ public class EndUserSteps extends ScenarioSteps {
             createMessagePage.click_simple_body_link();
             createMessagePage.enter_body(body);
             createMessagePage.click_send_button();
+            logger.info("Пользователь отправил письмо");
         }
     }
 
@@ -69,6 +75,7 @@ public class EndUserSteps extends ScenarioSteps {
         settingsMessagesPage.select_show_next_message();
         settingsMessagesPage.click_save_button();
         settingsMessagesPage.waitForTextToDisappear("Хочу получать информационные рассылки");
+        logger.info("Пользователь выставил настройки отображения письма");
     }
 
     /**
@@ -80,6 +87,7 @@ public class EndUserSteps extends ScenarioSteps {
         settingsMessagesPage.select_show_list_of_subjects();
         settingsMessagesPage.click_save_button();
         settingsMessagesPage.waitForTextToDisappear("Хочу получать информационные рассылки");
+        logger.info("Пользователь выставил настройки отображения письма");
     }
 
     /**
@@ -91,6 +99,7 @@ public class EndUserSteps extends ScenarioSteps {
         inboxPage.click_on_top_message();
         messagePage.callWhenPageOpensMethods();
         messagePage.click_delete_button();
+        logger.info("Пользователь удалил последнее письмо");
     }
 
     /**
@@ -100,6 +109,7 @@ public class EndUserSteps extends ScenarioSteps {
     public void is_on_next_message_page() {
         assertThat(getDriver().getCurrentUrl())
                 .contains(getPages().getDefaultBaseUrl() + "/message/");
+        logger.info("Пользователь находится на странице письма");
     }
 
     /**
@@ -108,5 +118,6 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void is_on_list_of_subjects_page() {
         inboxPage.shouldBeDisplayed();
+        logger.info("Пользователь находится на странице списка тем");
     }
 }

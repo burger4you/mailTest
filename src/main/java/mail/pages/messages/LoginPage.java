@@ -22,7 +22,7 @@ public class LoginPage extends PageObject {
     @FindBy(name = "Domain")
     private WebElementFacade domainDropDown;
 
-    @FindBy(xpath = "//*[@class='login-page__external__form__button login-page__external__form__button_blue js-login-page__external__submit']")
+    @FindBy(xpath = "//*[@class='btn btn_main js-login-page__external__submit']")
     private WebElementFacade loginButton;
 
     public LoginPage(WebDriver driver) {
